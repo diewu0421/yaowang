@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, signals
+from flask import Flask, request, jsonify, signals, render_template
 from model import *
 from flask_socketio import SocketIO, emit, send, SocketIOTestClient, join_room, leave_room, rooms
 from gevent import pywsgi
@@ -168,6 +168,11 @@ def on_connect(auth):
 @socketio.on("disconnect", namespace="/zenglw")
 def on_disconnect():
     print("disconnect 11111 ", request.sid)
+
+
+@app.route("/add")
+def add_index():
+    return render_template("front/add.html")
 
 
 if __name__ == '__main__':
