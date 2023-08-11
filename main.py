@@ -73,6 +73,16 @@ def hello_world():
     db.session.commit()
     return "success"
 
+@app.route("/blog")
+def blog():
+    print("blog")
+    return jsonify(
+        {
+            "data": "success",
+            "code": 0,
+            "message" : ""
+        }
+    )
 
 @app.route("/getMessage", methods=["GET"])
 def getMessage():
