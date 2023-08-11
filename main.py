@@ -59,18 +59,18 @@ def test_celery():
 # 测试
 @app.route('/')
 def hello_world():
-    # a1 = Author(name = "zenglw", age = 30)
-    # a2 = Author(name = "xixi", age = 27)
-    #
-    # b1 = Book(title = "阿斯蒂芬")
-    # b2 = Book(title = "kkj")
-    # b3 = Book(title = "sdf")
-    # a1.books.append(b1)
-    # a1.books.append(b3)
-    # b2.authors.append(a2)
-    # b3.authors.append(a2)
-    # db.session.add_all([a1, a2, b1, b2,b3])
-    # db.session.commit()
+    a1 = Author(name = "zenglw", age = 30)
+    a2 = Author(name = "xixi", age = 27)
+
+    b1 = Book(title = "阿斯蒂芬")
+    b2 = Book(title = "kkj")
+    b3 = Book(title = "sdf")
+    a1.books.append(b1)
+    a1.books.append(b3)
+    b2.authors.append(a2)
+    b3.authors.append(a2)
+    db.session.add_all([a1, a2, b1, b2,b3])
+    db.session.commit()
     return "success"
 
 
